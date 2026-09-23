@@ -1,0 +1,16 @@
+#define LED_PIN 13
+
+// Vogliamo fare in modo di ricevere dei log dal nostro arduino, utilizzando la serial asynchronousline
+
+void setup() {                
+  pinMode(LED_PIN, OUTPUT);   
+  Serial.begin(9600); // Indichiamo la velocità in bit/secondo, più alta è più probabilità di errore abbiamo
+}
+void loop() {
+  digitalWrite(LED_PIN, HIGH);
+  Serial.println("ON");
+  delay(1000);             
+  digitalWrite(LED_PIN, LOW); 
+  Serial.println("OFF");  
+  delay(1000);              
+}
